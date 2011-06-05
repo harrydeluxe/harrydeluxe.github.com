@@ -86,7 +86,7 @@ Ext.onReady(function(){
     });
 
     var rowEditing = Ext.create('Ext.ux.grid.plugin.RowEditing', {
-        clicksToMoveEditor: 2,
+        clicksToMoveEditor: 1,
         autoCancel: false
     });
 
