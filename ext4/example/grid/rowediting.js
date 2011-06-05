@@ -84,10 +84,10 @@ Ext.onReady(function(){
     });
 
     var rowEditing = Ext.create('Ext.ux.grid.plugin.RowEditing', {
-        clicksToMoveEditor: 2,
+    	clicksToMoveEditor: 1,
         autoCancel: false
     });
-
+ 
     // create the grid and specify what field you want
     // to use for the editor at each column.
     var grid = Ext.create('Ext.grid.Panel', {
