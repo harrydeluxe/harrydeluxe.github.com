@@ -187,9 +187,7 @@ Ext.onReady(function()
 				} ]
 			} ]
 		},
-
 		grid
-
 		],
 
 		buttons: [ '->', {
