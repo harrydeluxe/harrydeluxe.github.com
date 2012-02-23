@@ -1,9 +1,9 @@
 /**
- * Ext.ux.container.ButtonSegment Class
+ * @class Ext.ux.container.ButtonSegment
+ * @extends Ext.container.ButtonGroup
  * 
  * @author Harald Hanek (c) 2011
- * 
- * License: MIT (http://www.opensource.org/licenses/mit-license.php)
+ * @license MIT (http://www.opensource.org/licenses/mit-license.php)
  */
 
 Ext.define('Ext.ux.container.ButtonSegment', {
@@ -21,6 +21,7 @@ Ext.define('Ext.ux.container.ButtonSegment', {
     onRender: function()
 	{
 		var me = this;
+
 		me.callParent(arguments);
 
 		me.activeItem = (me.activeItem + 1 > me.items.length) ? 0 : me.activeItem;
@@ -28,14 +29,20 @@ Ext.define('Ext.ux.container.ButtonSegment', {
 		me.items.each(function(el, c)
 		{
 			if(me.items.length === 1)
-				el.cls = ' ' + me.buttonCls +'-single';
+				el.addCls(me.buttonCls +'-single');
 			else
-				el.cls = c == 0 ? ' ' + me.buttonCls +'-first' : (c == me.items.length - 1 ? ' ' + me.buttonCls +'-last' : ' ' + me.buttonCls +'-item');
+			{
+				var cls = c == 0 ? me.buttonCls +'-first' : (c == me.items.length - 1 ? me.buttonCls +'-last' : me.buttonCls +'-item');
+				el.addCls(cls);
+			}
 		});
-
 	},
 
-    onBeforeAdd: function(component)
-    {
-    }
+	beforeRender: function()
+	{
+	},
+    
+	onBeforeAdd: function(component)
+	{
+	}
 });
